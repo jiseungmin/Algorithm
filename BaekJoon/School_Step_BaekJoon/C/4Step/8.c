@@ -18,9 +18,7 @@ int main(void) {
     
     double sum = 0;
     for (int i = 0; i < a; i++) {
-        if (arr[i] != max) {
-            arr[i] = arr[i] / max * 100.0;
-        }
+        arr[i] = arr[i] / max * 100.0;
         sum += arr[i];
     }
 

@@ -1,22 +1,18 @@
 #include <stdio.h>
 
-int main(void){
-    int a,b,c ;
-    scanf("%d %d %d",&a,&b,&c);
+int main() {
 
-    if(a==b || a==c){
-        printf("%d",1000+a*100);
-    }else if(b==c){
-        printf("%d",1000+b*100);
-    }else if (a==b || b==c){
-        printf("%d",10000+a*1000);
-    }else{
-        if(a>b && a>c){printf("%d",a*100);}
-        else if (b>c && b>a){printf("%d",b*100);}
-        else printf("%d",c*100);
+    int A, B, C;
+    scanf("%d %d %d", &A, &B, &C);
+
+    if (A == B && B == C) printf("%d", 10000 + A * 1000);
+    else if (A == B || B == C) printf("%d", 1000 + B * 100);
+    else if (C == A) printf("%d", 1000 + C * 100);
+    else {
+        if (A > B && A > C) printf("%d", A * 100);
+        else if (B > A && B > C) printf("%d", B * 100);
+        else printf("%d", C * 100);
     }
-    
-    
+
     return 0;
 }
-

@@ -9,10 +9,10 @@ int main(void){
         scanf("%d",&n);
         ar[i] = n;
     }
-    
+
     for(int i =0; i<a; i++){
      if(ar[i]<b){
-            printf("%d",ar[i]);
+            printf("%d ",ar[i]);
         }
     }
 

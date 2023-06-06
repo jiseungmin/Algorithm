@@ -2,7 +2,7 @@
 
 int main(void){
     long long a,b,c;
-    scanf("%d %d %d",&a,&b,&c);
-    printf("%d",a+b+c);
+    scanf("%ld %ld %ld",&a,&b,&c);
+    printf("%ld",a+b+c);
     return 0;
 }
