@@ -1,28 +1,6 @@
-ddz=s = input()
-count = 0
+croatia = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+word = input()
 
-for i in range(len(s)):
-    if s[i] == 'c' and s[i+1] =='=':
-        count +=1
-    elif s[i] == 'c' and s[i+1] =='-':
-        count +=1
-    elif s[i] == 'd' and s[i+1] =='z' and s[i+2] =='=':
-        count +=1
-    elif s[i] == 'd' and s[i+1] =='-':
-        count +=1
-    elif s[i] == 'l' and s[i+1] =='j':
-        count +=1
-    elif s[i] == 'n' and s[i+1] =='j':
-        count +=1
-    elif s[i] == 's' and s[i+1] =='=':
-        count +=1
-    elif s[i] == 'z' and s[i+1] =='=':
-        count +=1
-    else:
-        count += 0
-print(count)
-print(len(s)-count/2)
-    
-    
-    
-        
+for i in croatia :
+    word = word.replace(i, '*')  # input 변수와 동일한 이름의 변수
+print(len(word))
