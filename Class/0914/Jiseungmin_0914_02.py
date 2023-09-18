@@ -1,19 +1,21 @@
-# 제목 : 재귀함수로 구현한 파보나치 수열의 성능측정
+# 제목 : DP로 구현한 파보나치 수열의 성능측정
 # 이름 : 지승민
 # 날짜 : 2023.09.14
-import time
 
+import time
 n = int(input("n을 입력하세요: "))
+dictionary = {1:1,2:1}
 counter = 0
 
 def fibo(n):
     global counter
-    counter +=1
-    
-    if n==1 or n==2:
-        return 1
+    counter += 1
+    if n in dictionary :
+        return dictionary[n]
     else :
-        return fibo(n-1)+ fibo(n-2)
+        output = fibo(n-1) + fibo(n-2)
+        dictionary[n] = output
+        return output
 
 start = time.time()
 fibo(n)
