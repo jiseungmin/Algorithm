@@ -8,7 +8,7 @@ def sunmmon():
 
 aaa = sunmmon()
 print(sunmmon(), type(sunmmon()))
-print(aaa[0], type[aaa[0]])
+print(aaa[0], type(aaa[0]))
 
 [a, b] = [10, 20]
 (c, d) = (10, 20)
