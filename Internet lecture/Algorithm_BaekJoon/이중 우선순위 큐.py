@@ -2,24 +2,35 @@
 # D 1’는 Q에서 최댓값을 삭제하는 연산
 # D -1’는 Q 에서 최솟값을 삭제하는 연산을 의미
 
+import sys
+input = sys.stdin.readline
 import heapq
 
-n = int(input())
-m = int(input())
-heap = []
+def pop(heap):
+    while len(heap) > 0 :
+        data, id  = heapq.heappop(heap)
+        if not deleted[id] :
+            deleted[id] = True
+            return data
+    return None
 
-for i in range(2):
-    for i in range(m):
-        q, t = map(int, input().split())
-        if(q == 'I'):
-            heap.append(t)
-        elif q == 'D':
-            if t == 1:
-                heap.remove(max(heap))
-            elif t == -1:
-                heap.remove(min(heap))
-
-if len(heap) == 0:
-    print("EMPTY")
-else:
-    print(heap)
+for _ in range(int(input())):
+    k = int(input())
+    min_heap = []
+    max_heap = []
+    current = 0
+    deleted = [False] * (k+1)
+    for i in range(k):
+        command =input().split()
+        operator, data = command[0], int(command[1])
+        if operator == 'D':
+            if data == -1 : pop(min_heap)
+            elif data == 1 : pop(max_heap)
+        elif operator == 'I':
+            heapq.heappush(min_heap, (data,current))
+            heapq.heappush(max_heap, (-data,current))
+    max_value = pop(max_heap)
+    if max_value == None : print("EMPTY")
+    else :
+        heapq.heappush(min_heap, (-max_value, current))
+        print(-max_value, pop(min_heap))
